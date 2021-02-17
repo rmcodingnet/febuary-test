@@ -2,10 +2,12 @@ import { Route, Switch } from "react-router-dom"
 import Album from "./components/Album/Album";
 import Artist from "./components/Artist/Artist";
 import MusicTable from "./components/MusicTable/MusicTable"
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <Switch>
       <Route
           exact={true}

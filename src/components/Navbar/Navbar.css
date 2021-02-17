@@ -1,0 +1,7 @@
+.navbar {
+    display: flex;
+    background-color: orange;
+    color: white;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
