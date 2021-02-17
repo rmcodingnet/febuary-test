@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router-dom"
+import Album from "./components/Album/Album";
+import Artist from "./components/Artist/Artist";
+import MusicTable from "./components/MusicTable/MusicTable"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+      <Route
+          exact={true}
+          path="/album"
+          render={(props) => (
+            <Album
+              {...props}
+            />
+          )}
+        />
+      <Route
+          exact={true}
+          path="/artist"
+          render={(props) => (
+            <Artist
+              {...props}
+            />
+          )}
+        />
+        <Route
+          exact={true}
+          path="/"
+          render={(props) => (
+            <MusicTable
+              {...props}
+            />
+          )}
+        />
+      </Switch>
     </div>
   );
 }
