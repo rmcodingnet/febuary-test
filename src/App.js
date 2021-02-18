@@ -11,7 +11,7 @@ function App() {
       <Switch>
       <Route
           exact={true}
-          path="/album"
+          path="/album/:albumID"
           render={(props) => (
             <Album
               {...props}
@@ -20,7 +20,7 @@ function App() {
         />
       <Route
           exact={true}
-          path="/artist"
+          path="/artist/:artistID"
           render={(props) => (
             <Artist
               {...props}

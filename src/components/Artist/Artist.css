@@ -1,0 +1,48 @@
+.artistHeader {
+    display: flex;
+    flex-direction: row;
+    margin: 20px
+}
+
+.artistHeader img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.artistInfo {
+    margin-left: 20px;
+}
+
+.popularSongs {
+    display: flex;
+    flex-direction: column;
+}
+
+.popularSongsTable img {
+    width: 75px;
+    height: 75px
+}
+
+
+.popularSongsTable td {
+    width: 22.5%;
+    text-align: center;
+}
+
+
+.discog {
+    display: flex;
+    flex-direction: row;
+}
+
+.albumInfo {
+    display: flex;
+    flex-direction: column;
+    margin: 20px
+}
+
+.albumInfo img {
+    width: 200px;
+    height: 200px;
+}

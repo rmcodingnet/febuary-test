@@ -1,0 +1,30 @@
+.albumHeader {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.columnFlex {
+    display: flex;
+    flex-direction: row;
+}
+
+.albumDetails {
+    margin-left: 10px;
+}
+
+.songList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px
+}
+.songList h2 {
+    margin-left: 10px;
+}
+
+.albumSongTable td {
+    width: 31%;
+    text-align: center;
+}
+
