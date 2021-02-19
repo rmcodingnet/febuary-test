@@ -1,7 +1,8 @@
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch } from "react-router-dom";
 import Album from "./components/Album/Album";
 import Artist from "./components/Artist/Artist";
-import MusicTable from "./components/MusicTable/MusicTable"
+import MusicTable from "./components/MusicTable/MusicTable";
+import MusicForm from "./components/MusicForm/MusicForm";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -27,6 +28,15 @@ function App() {
             />
           )}
         />
+        <Route
+          exact={true}
+          path="/add/:addType"
+          render={(props) => (
+            <MusicForm
+              {...props}
+            />
+          )}
+          />
         <Route
           exact={true}
           path="/"

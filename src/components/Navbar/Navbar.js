@@ -17,6 +17,9 @@ const Navbar = () => {
             <div className="navItem">
                 <Link to="/add/song">Add Song</Link>
             </div>
+            <div className="navItem">
+                <Link to="/add/collab">Add Collaborator</Link>
+            </div>
         </div>
     );
 };
