@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getArtistInfo, getSongsByArtistId, getDiscography } from '../../api/MusicAPI'
 import { withRouter, useParams } from 'react-router-dom'
 import { getAlbumDuration } from '../../helpers/getAlbumDuration'
+import moment from 'moment'
 import './Artist.css'
 const Artist = () => {
     const [artistInfo, setArtistInfo] = useState([])
@@ -24,7 +25,7 @@ const Artist = () => {
                 <img alt="artist" src={info.photoUrl} />
                 <div className="artistInfo">
                     <h2>{`${info.firstname} ${info.surname}`}</h2>
-                    <h4>{`Age:${info.age}`}</h4>
+                    <h4>{`Age: ${moment().diff(info.birthDate, 'years', false)}`}</h4>
                     {info.albums.includes(',') ? <h4>{`Total Albums: ${info.albums.split(',').length}`}</h4>
                         : <h4>Total Albums: 1</h4>}
                     {info.songs.includes(',') ? <h4>{`Total Songs: ${info.songs.split(',').length}`}</h4>

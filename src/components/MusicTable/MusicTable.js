@@ -43,12 +43,12 @@ const MusicTable = () => {
         })
         .filter(value => {
             if(filterCriteria.minimumAge !== "") {
-                return value.age >= filterCriteria.minimumAge
+                return value.birthDate >= filterCriteria.minimumAge
             } else { return true }
         })
         .filter(value => {
             if(filterCriteria.maximumAge !== "") {
-                return value.age <= filterCriteria.maximumAge
+                return value.birthDate <= filterCriteria.maximumAge
             } else { return true }
         })
         .filter(value => {
@@ -78,10 +78,10 @@ const MusicTable = () => {
                 <input type="text" name="artistName" id="artistName" value={filterCriteria.artistName} onChange={(e) => handleChangeFilterCriteria({ artistName: e.target.value })}></input>
                 <label>Album</label>
                 <input type="text" name="albumName" id="albumName" value={filterCriteria.albumName} onChange={(e) => handleChangeFilterCriteria({ albumName: e.target.value })}></input>
-                <label>Artist Age Min</label>
-                <input type="number" name="minimumAge" id="minimumAge" value={filterCriteria.minimumAge} onChange={(e) => handleChangeFilterCriteria({ minimumAge: e.target.value })}></input>
-                <label>Artist Age Max</label>
-                <input type="number" name="maximumAge" id="maximumAge" value={filterCriteria.maximumAge} onChange={(e) => handleChangeFilterCriteria({ maximumAge: e.target.value })}></input>
+                <label> Start Artist Date Of Birth</label>
+                <input type="date" name="minimumAge" id="minimumAge" value={filterCriteria.minimumAge} onChange={(e) => handleChangeFilterCriteria({ minimumAge: e.target.value })}></input>
+                <label> End Artist Date Of Birth</label>
+                <input type="date" name="maximumAge" id="maximumAge" value={filterCriteria.maximumAge} onChange={(e) => handleChangeFilterCriteria({ maximumAge: e.target.value })}></input>
                 <label>Start Album Release Date</label>
                 <input type="date" name="minReleaseDate" id="minReleaseDate" value={filterCriteria.minReleaseDate} onChange={(e) => handleChangeFilterCriteria({ minReleaseDate: e.target.value })}></input>
                 <label>End Album Release Date</label>

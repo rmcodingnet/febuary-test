@@ -33,7 +33,7 @@ const MusicForm = () => {
     const newArtist = {
         firstname: values.firstname,
         surname: values.surname,
-        age: values.age,
+        birthDate: values.birthDate,
         gender: values.gender,
         photoUrl: values.photoUrl
     }
@@ -179,8 +179,8 @@ const MusicForm = () => {
             <label>Surname</label>
             <input required type="text" value={values.surname || ""} onChange={(e) => handleChangeValues({ surname: e.target.value })} />
             <br />
-            <label>Age</label>
-            <input required type="number" value={values.age || ""} onChange={(e) => handleChangeValues({ age: parseInt(e.target.value) })} />
+            <label>Date of Birth</label>
+            <input required type="date" value={values.birthDate || ""} onChange={(e) => handleChangeValues({ birthDate: e.target.value })} />
             <br />
             <label>Gender</label>
             <input required type="text" value={values.gender || ""} onChange={(e) => handleChangeValues({ gender: e.target.value })} />
