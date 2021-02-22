@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    background-color: orange;
+    background-color: #1DB954;
     color: white;
     flex-direction: row;
     justify-content: space-evenly;

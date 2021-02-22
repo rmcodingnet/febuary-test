@@ -4,6 +4,7 @@ import Artist from "./components/Artist/Artist";
 import MusicTable from "./components/MusicTable/MusicTable";
 import MusicForm from "./components/MusicForm/MusicForm";
 import Navbar from "./components/Navbar/Navbar";
+import './App.css'
 
 function App() {
   return (

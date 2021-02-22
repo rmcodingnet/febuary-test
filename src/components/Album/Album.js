@@ -3,13 +3,12 @@ import { getAlbumDetails, getAlbumSongs, getAlbumsByArtist } from '../../api/Mus
 import { withRouter, useParams } from 'react-router-dom'
 import { getAlbumDuration } from '../../helpers/getAlbumDuration'
 import "./Album.css"
+import FastAverageColor from 'fast-average-color'
 
 const Album = ({ history }) => {
 
     const [albumHeaderInfo, setAlbumHeaderInfo] = useState([])
     const [albumSongs, setAlbumSongs] = useState([])
-
-    const [artist, setArtist] = useState(null)
 
     const { albumID } = useParams()
 
@@ -20,6 +19,8 @@ const Album = ({ history }) => {
     useEffect(() => {
         getAlbumDetails(albumID).then(result => setAlbumHeaderInfo(result))
         getAlbumSongs(albumID).then(result => setAlbumSongs(result))
+        
+
 
     }, [albumID])
 
@@ -48,6 +49,21 @@ const Album = ({ history }) => {
             })
         })
     })
+
+    const fac = new FastAverageColor();
+
+
+    if(albumHeaderInfo.length > 0) {
+        fac.getColorAsync(albumHeaderInfo[0].photoUrl)
+        .then(color => {
+            document.querySelector('.albumHeader').style.backgroundColor = color.rgba;
+            document.querySelector('.albumHeader').style.color = color.isDark ? '#fff': '#000';
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    }
+
     // if (artist.length > 0) {
     //     artist.map((nextAlbum, index) => {
     //         const currentAlbum = albumID
@@ -68,6 +84,9 @@ const Album = ({ history }) => {
     //     )
     // }
     // })
+
+
+    
 
     const header = albumHeaderInfo.length > 0 ?
         <>
